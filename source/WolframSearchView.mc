@@ -58,11 +58,17 @@ class WolframSearchView extends WatchUi.View {
 
   function wolfram_callback(
     response as Toybox.Lang.Number,
-    data as Toybox.Lang.String
+    data as Toybox.Lang.String?
   ) as Void {
-    System.println("Answer Recieved: \'" + data + "\'");
-    popView(SLIDE_BLINK);
-    text_view = new TextView(data.toString());
-    pushView(text_view, null, SLIDE_DOWN);
+    if (data != null) {
+      System.println("Answer Recieved: \'" + data + "\'");
+      popView(SLIDE_BLINK);
+      text_view = new TextView(data.toString());
+      pushView(text_view, null, SLIDE_DOWN);
+    } else {
+      System.println("Null data recieved");
+      text_view = new TextView("Search Error");
+      pushView(text_view, null, SLIDE_DOWN);
+    }
   }
 }
