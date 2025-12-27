@@ -1,0 +1,4 @@
+<properties>
+    <property id="wolfram_key" type="string"></property>
+    <property id="imperial" type="boolean"></property>
+</properties>

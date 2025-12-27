@@ -1,0 +1,8 @@
+<settings>
+    <setting propertyKey="@Properties.wolfram_key" title="@Strings.WolframKeyTitle">
+        <settingConfig type="alphaNumeric" required="true" />
+    </setting>
+    <setting propertyKey="@Properties.imperial" title="@Strings.ImperialTitle">
+        <settingConfig type="boolean" required="true" />
+    </setting>
+</settings>
