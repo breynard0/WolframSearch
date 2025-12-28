@@ -20,16 +20,12 @@ class WolframSearchView extends WatchUi.View {
   // loading resources into memory.
   var text_delegate as SearchTextPickerDelegate =
     new SearchTextPickerDelegate();
-  var picker_shown = false;
   function onShow() as Void {
-    if (!picker_shown) {
       pushView(
         new WatchUi.TextPicker(""),
         text_delegate,
         WatchUi.SLIDE_IMMEDIATE
       );
-      picker_shown = true;
-    }
 
     // text_view = new TextView(
     //   "The quick brown fox jumped over the lazy dog. Speaking of lazy dog, I look over and see this distinguished creature lounging out on the sofa. Not a care in the world, yawing."
@@ -71,7 +67,7 @@ class WolframSearchView extends WatchUi.View {
       pushView(text_view, null, SLIDE_DOWN);
     } else {
       System.println("Null data recieved");
-      text_view = new TextView("Search Error");
+      text_view = new TextView("Search Error, please try again later.");
       pushView(text_view, null, SLIDE_DOWN);
     }
   }
